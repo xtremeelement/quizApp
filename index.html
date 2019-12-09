@@ -12,23 +12,58 @@
   </head>
   <body>
     <div class="container">
-      <class class="row">
+      <div class="row">
         <div class="beginQuiz" onclick="startQuiz()">
-          Click here to begin quiz
+          <button>Click here to begin quiz</button>
         </div>
-      </class>
+      </div>
       <div class="row">
         <div class="col s12">
+          <h3 id="timer" style="display: none;">60</h3>
+        </div>
+      </div>
+      <div class="row" id="quizGame" style="display: flex;">
+        <div class="col s12">
           <div class="collection">
-            <a class="collection-header" id="header"><h4>First Names</h4></a>
-            <a href="#!" id="0" value="0" class="collection-item">Alvin</a>
-            <a href="#!" id="1" value="1" class="collection-item">Alvin</a>
-            <a href="#!" id="2" value="2" class="collection-item">Alvin</a>
-            <a href="#!" id="3" value="3" class="collection-item">Alvin</a>
+            <div class="collection-header" id="header">
+              <h4>First Names</h4>
+            </div>
+            <a href="#!" id="0" class="collection-item" onclick="checkAnswer()"
+              >Alvin</a
+            >
+            <a href="#!" id="1" class="collection-item" onclick="checkAnswer()"
+              >Alvin</a
+            >
+            <a
+              href="#!"
+              id="2"
+              v
+              class="collection-item"
+              onclick="checkAnswer()"
+              >Alvin</a
+            >
+            <a href="#!" id="3" class="collection-item" onclick="checkAnswer()"
+              >Alvin</a
+            >
           </div>
           <div class="row">
-            <div class="result">Correct!</div>
+            <div class="col s6">
+              <div class="result"></div>
+            </div>
+            <div class="col s6" id="next" style="display: none;">
+              <button>Next Question</button>
+            </div>
           </div>
+        </div>
+      </div>
+      <div class="row" id="highscores" style="display: none;">
+        <div class="col s12">
+          <ul id="scorellist">
+            <li>asdf</li>
+            <li>asdf</li>
+            <li>asdf</li>
+            <li>asdf</li>
+          </ul>
         </div>
       </div>
     </div>
