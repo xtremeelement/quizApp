@@ -1,22 +1,42 @@
 const questions = [
   {
-    question: "What is 1",
-    answers: ["what", "what2", "what3", "what4"],
-    key: 1
+    question: "What is JSON",
+    answers: [
+      "JavaScript Official Notation",
+      "Javascript Optional Notation",
+      "Javascript Object Notation",
+      "Just Some Other Notation"
+    ],
+    key: 2
   },
   {
-    question: "What is 2",
-    answers: ["what", "what2", "what3", "what4"],
-    key: 1
+    question: "What is Jquery",
+    answers: [
+      "A Html FrameWork",
+      "A CSS Framework",
+      "A JS Framework",
+      "SQL Language"
+    ],
+    key: 2
   },
   {
-    question: "What is 3",
-    answers: ["what", "what2", "what3", "what4"],
-    key: 1
+    question: "What does DOM stand for",
+    answers: [
+      "Document Object Model",
+      "Document Object Manipulation",
+      "Data Object Model",
+      "Delayed Onset MuscleSoreness"
+    ],
+    key: 0
   },
   {
-    question: "What is 4",
-    answers: ["what", "what2", "what3", "what4"],
+    question: "What is NodeJS",
+    answers: [
+      "CSS FrameWork",
+      "JS Server Environment",
+      "JS UI Library",
+      "Ruby on Rails Framework"
+    ],
     key: 1
   }
 ];
