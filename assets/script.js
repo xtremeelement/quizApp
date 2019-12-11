@@ -73,6 +73,7 @@ var timeThing = setInterval(function() {
   if (time < 0) {
     clearInterval(timeThing);
     result.innerHTML = "Times Up!";
+    endGame();
   }
 }, 1000);
 
@@ -114,9 +115,8 @@ function endGame() {
   clearInterval(timeThing);
   quizGame.style = "display: none;";
   scorediv.style = "display: flex";
-  let temp = score;
   allScores = JSON.parse(localStorage.getItem("highscores"));
-  allScores.push(temp);
+  allScores.push(score);
   for (var i = 0; i < allScores.length; i++) {
     scorediv.append(allScores[i]);
   }
