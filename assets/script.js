@@ -59,6 +59,7 @@ function startQuiz() {
   timer.style = "display: flex;";
   start.style = "display: none;";
   next.style = "display: flex;";
+  quizGame.style = "display: flex;";
   timeThing;
   header.innerHTML = questions[index].question;
   for (var i = 0; i < 4; i++) {
@@ -107,13 +108,18 @@ function nextQuestion() {
 
 function endGame() {
   console.log("im in");
+  score = time;
   time = 0;
   timer.innerHTML = "High Scores";
   clearInterval(timeThing);
   quizGame.style = "display: none;";
   scorediv.style = "display: flex";
-  let temp = { score };
+  let temp = score;
+  allScores = JSON.parse(localStorage.getItem("highscores"));
   allScores.push(temp);
+  for (var i = 0; i < allScores.length; i++) {
+    scorediv.append(allScores[i]);
+  }
   localStorage.setItem("highScores", JSON.stringify(allScores));
   var publishScores = JSON.parse(localStorage.getItem("highScores"));
   console.log(publishScores);
