@@ -53,6 +53,7 @@ var highScores = localStorage.getItem("highscores");
 let timer = document.querySelector("#timer");
 let quizGame = document.querySelector("#quizGame");
 let scorediv = document.querySelector("#highscores");
+let scoreList = document.querySelector("#scorelist");
 next.addEventListener("click", nextQuestion);
 
 function startQuiz() {
@@ -62,6 +63,7 @@ function startQuiz() {
   quizGame.style = "display: flex;";
   timeThing;
   header.innerHTML = questions[index].question;
+
   for (var i = 0; i < 4; i++) {
     let question = document.getElementById(`${i}`);
     question.innerHTML = questions[index].answers[i];
@@ -110,18 +112,25 @@ function nextQuestion() {
 function endGame() {
   console.log("im in");
   score = time;
+  console.log(score);
   time = 0;
   timer.innerHTML = "High Scores";
   clearInterval(timeThing);
   quizGame.style = "display: none;";
   scorediv.style = "display: flex";
-  allScores = JSON.parse(localStorage.getItem("highscores"));
+
+  allScores.push(JSON.parse(localStorage.getItem("highscores")));
   allScores.push(score);
+
+  console.log(allScores);
+
   for (var i = 0; i < allScores.length; i++) {
-    scorediv.append(allScores[i]);
+    var newScore = `<div>${allScores[i]}</div>`;
+    document.querySelector("#scorelist").innerHTML = newScore;
   }
-  localStorage.setItem("highScores", JSON.stringify(allScores));
-  var publishScores = JSON.parse(localStorage.getItem("highScores"));
+
+  localStorage.setItem("highscores", JSON.stringify(allScores));
+  var publishScores = JSON.parse(localStorage.getItem("highscores"));
   console.log(publishScores);
 }
 // console.log(data);
